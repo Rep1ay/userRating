@@ -1,0 +1,27 @@
+table {
+    width: 100%;
+  }
+  
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+  
+  td, th {
+    width: 25%;
+  }
+
+.filterBlock {
+  width: 200px;
+  top: 50px;
+  margin: 20px auto;
+}
+
+.mat-sort-header-container .mat-sort-header-arrow {
+  color: #fff;
+}
+
+th.mat-header-cell {
+  background: #d42ed6;
+  color: white;
+}
