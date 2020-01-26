@@ -55,6 +55,29 @@ export class WatchersComponent implements OnInit {
   ngOnInit() {
   }
 
+  getTheWinner() {
+   
+    this.clearMemberStyle();
+    setTimeout(() => {
+      const min = Math.ceil(0);
+      const max = Math.floor(+this.winnersCount);
+      const result = Math.floor(Math.random() * (max - min + 1)) + min;
+      this.winnersList[result].color = "#00BCD4";
+      this.winnersList[result].nameFontSize = "70px";
+    }, 5000)
+
+  }
+
+  clearMemberStyle(){
+    this.winnersList = this.winnersList.map((winner, index) => {
+      winner.color = "#7B76F5"
+      winner.nameFontSize = "20px"
+      winner.positionFontSize = this.changeNamePositionSize(index + 1);
+
+      return winner
+    })
+  }
+
   sortMembers(res) {
     res.sort((a, b) => a.totalTime > b.totalTime ? -1 : 1)
   };
@@ -76,7 +99,8 @@ export class WatchersComponent implements OnInit {
       const el = document.getElementById("winners_block");
       el.scrollIntoView();
     }, 100)
-}
+  }
+  
 
   changeColor(value) {
     let color;
