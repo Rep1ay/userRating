@@ -19,15 +19,19 @@
         <button (click)="getTheWinner()" mat-raised-button color="warn">
             Определить Победителя
         </button>
-    </mat-card>
+        <div class="wrap">
+        <!-- <button (click)="getTheWinner()" class="winner_button"> Определить Победителя</button> -->
+    </div>
 
+
+    </mat-card>
     <div *ngIf=showWinners class="winners_block">
 
         <mat-chip-list class="mat-chip-list-stacked" aria-label="Color selection">
             <div class="winner_block">
                 <mat-chip style="height: auto;" *ngFor="let winner of winnersList; index as ind"
                     [style.background-color]="winner.color">
-                    <button mat-fab color="accent">{{ind + 1}}</button>
+                    <button class="winner_btn" mat-fab color="accent">{{ind + 1}}</button>
                     <p class="winner_parag" [style.fontSize]=winner.nameFontSize>{{winner.userName}}</p>
                     <!-- <p>
                             <span [style.fontSize]=winner.nameFontSize>{{winner.userName}}</span>
@@ -38,7 +42,7 @@
             </div>
         </mat-chip-list>
     </div>
-    <!-- FILTER BLICK -->
+    <!-- FILTER BLOCK -->
     <div class="filterBlock">
         <mat-form-field>
             <input class="filterInput" matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">

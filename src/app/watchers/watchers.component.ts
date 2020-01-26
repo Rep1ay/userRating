@@ -56,7 +56,9 @@ export class WatchersComponent implements OnInit {
   }
 
   getTheWinner() {
-   
+    document.querySelectorAll(".winner_btn").forEach(elem => {
+      elem.classList.add("winner_item")
+    })
     this.clearMemberStyle();
     setTimeout(() => {
       const min = Math.ceil(0);
@@ -64,6 +66,9 @@ export class WatchersComponent implements OnInit {
       const result = Math.floor(Math.random() * (max - min + 1)) + min;
       this.winnersList[result].color = "#00BCD4";
       this.winnersList[result].nameFontSize = "70px";
+      document.querySelectorAll(".winner_item").forEach(elem => {
+        elem.classList.remove("winner_item")
+      })
     }, 5000)
 
   }
@@ -73,7 +78,6 @@ export class WatchersComponent implements OnInit {
       winner.color = "#7B76F5"
       winner.nameFontSize = "20px"
       winner.positionFontSize = this.changeNamePositionSize(index + 1);
-
       return winner
     })
   }
@@ -123,16 +127,16 @@ export class WatchersComponent implements OnInit {
   changeNameFontSize(value) {
     switch (value) {
       case 1:
-        value = 70
+        value = 65
         break;
       case 2:
-        value = 50
+        value = 45
         break;
       case 3:
-        value = 30
+        value = 25
         break;
       default:
-        value = 20
+        value = 15
     }
     let result = `${value}px`;
     return result;
