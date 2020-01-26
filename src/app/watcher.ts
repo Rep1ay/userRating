@@ -1,5 +1,9 @@
 export interface Watcher {
     userName: String;
     userId: String;
-    totalTime: Number
+    totalTime: Number;
+    color?: string;
+    nameFontSize?: string;
+    positionFontSize?: string;
+
 }

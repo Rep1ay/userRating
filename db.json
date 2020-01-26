@@ -1,0 +1,103 @@
+{
+  "members": [
+    {
+      "_id": {
+        "$oid": "5dd4fd6a67a3a49a4ab70898"
+      },
+      "userId": "86271",
+      "__v": 0,
+      "totalTime": 2732,
+      "userName": "DeSeRtod"
+    },
+    {
+      "_id": {
+        "$oid": "5dd5004567a3a49a4ab7182e"
+      },
+      "userId": "230202",
+      "__v": 0,
+      "totalTime": 2907,
+      "userName": "Rep1ay"
+    },
+    {
+      "_id": {
+        "$oid": "5dd4fd6b67a3a49a4ab7089a"
+      },
+      "userId": "236798",
+      "__v": 0,
+      "totalTime": 2648,
+      "userName": "Shagrom"
+    },
+    {
+      "_id": {
+        "$oid": "5dd4fd6b67a3a49a4ab7089a"
+      },
+      "userId": "236798",
+      "__v": 0,
+      "totalTime": 3,
+      "userName": "Shagrom"
+    },
+    {
+      "_id": {
+        "$oid": "5dd4fd6b67a3a49a4ab7089a"
+      },
+      "userId": "236798",
+      "__v": 0,
+      "totalTime": 2,
+      "userName": "Shagrom"
+    },
+    {
+      "_id": {
+        "$oid": "5dd4fd6b67a3a49a4ab7089a"
+      },
+      "userId": "236798",
+      "__v": 0,
+      "totalTime": 1,
+      "userName": "Shagrom"
+    },
+    {
+      "_id": {
+        "$oid": "5dd4fd6b67a3a49a4ab7089a"
+      },
+      "userId": "236798",
+      "__v": 0,
+      "totalTime": 1,
+      "userName": "Shagrom"
+    },
+    {
+      "_id": {
+        "$oid": "5dd4fd6b67a3a49a4ab7089a"
+      },
+      "userId": "236798",
+      "__v": 0,
+      "totalTime": 1,
+      "userName": "Shagrom"
+    },
+    {
+      "_id": {
+        "$oid": "5dd4fd6b67a3a49a4ab7089a"
+      },
+      "userId": "236798",
+      "__v": 0,
+      "totalTime": 1,
+      "userName": "Shagrom"
+    },
+    {
+      "_id": {
+        "$oid": "5dd4fd6b67a3a49a4ab7089a"
+      },
+      "userId": "236798",
+      "__v": 0,
+      "totalTime": 1,
+      "userName": "Shagrom"
+    },
+    {
+      "_id": {
+        "$oid": "5dd4fd6b67a3a49a4ab7089a"
+      },
+      "userId": "236798",
+      "__v": 0,
+      "totalTime": 1,
+      "userName": "Shagrom"
+    }
+  ]
+}

@@ -1,43 +1,80 @@
-<div class="filterBlock">
-    <mat-form-field>
-        <input class="filterInput" matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
-    </mat-form-field>
+<div class="loader">
+    <mat-progress-spinner *ngIf=showLoader class="example-margin" [color]="loaderColor" [mode]="mode" [value]="value">
+    </mat-progress-spinner>
 </div>
 
 
-<div class="mat-elevation-z8">
-<table mat-table [dataSource]="dataSource" matSort>
 
-    <!-- Progress Column -->
-    <ng-container matColumnDef="totalTime">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header> Progress </th>
-    <td mat-cell *matCellDef="let row"> {{row.totalTime}} points </td>
-    </ng-container>
+<div *ngIf=!showLoader class="content">
+    <!-- TOP 10 BUTTON -->
+    <div class="button_block">
+        <button (click)=" scroll()" color="accent" mat-raised-button style="   
+                        height: 60px;
+                        margin: 50px 0;
+                        font-size: 25px;">Определить Топ-{{winnersCount}} Зрителей</button>
+    </div>
 
-     <!-- Name Column -->
-     <ng-container matColumnDef="userName">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
-    <td mat-cell *matCellDef="let row"> {{row.userName}} </td>
-    </ng-container>
+    <mat-card id="winners_block" class="winners_topic" *ngIf=showWinners>
+        <h1>Топ-{{winnersCount}} Зрителей</h1>
+    </mat-card>
 
-    <!-- ID Column -->
-    <ng-container matColumnDef="userId">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
-    <td mat-cell *matCellDef="let row"> {{row.userId}} </td>
-    </ng-container>
+    <div *ngIf=showWinners class="winners_block">
 
-    <!-- Color Column -->
-    <!-- <ng-container matColumnDef="color">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header> Color </th>
-    <td mat-cell *matCellDef="let row" [style.color]="row.color"> {{row.color}} </td>
-    </ng-container> -->
+        <mat-chip-list class="mat-chip-list-stacked" aria-label="Color selection">
+            <div class="winner_block">
+                <mat-chip style="height: auto;" *ngFor="let winner of winnersList; index as ind"
+                    [style.background-color]="winner.color">
+                    <button mat-fab color="accent">{{ind + 1}}</button>
+                    <p class="winner_parag" [style.fontSize]=winner.nameFontSize>{{winner.userName}}</p>
+                    <!-- <p>
+                            <span [style.fontSize]=winner.nameFontSize>{{winner.userName}}</span>
+                        </p> -->
+                    <!-- <span [style.fontSize]=winner.positionFontSize>{{ind + 1}}:</span> -->
 
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;">
-    </tr>
-</table>
+                </mat-chip>
+            </div>
+        </mat-chip-list>
+    </div>
+    <!-- FILTER BLICK -->
+    <div class="filterBlock">
+        <mat-form-field>
+            <input class="filterInput" matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+        </mat-form-field>
+    </div>
+    <!-- TABLE BLOCK -->
+    <div class="mat-elevation-z8">
+        <table mat-table [dataSource]="dataSource" matSort>
 
-<mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+            <!-- Progress Column -->
+            <ng-container matColumnDef="totalTime">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Progress </th>
+                <td mat-cell *matCellDef="let row"> {{row.totalTime}} points </td>
+            </ng-container>
+
+            <!-- Name Column -->
+            <ng-container matColumnDef="userName">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+                <td mat-cell *matCellDef="let row"> {{row.userName}} </td>
+            </ng-container>
+
+            <!-- ID Column -->
+            <ng-container matColumnDef="userId">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+                <td mat-cell *matCellDef="let row"> {{row.userId}} </td>
+            </ng-container>
+
+            <!-- Color Column -->
+            <ng-container matColumnDef="color">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Color </th>
+                <td mat-cell *matCellDef="let row" [style.color]="row.color"> {{row.color}} </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;">
+            </tr>
+        </table>
+
+        <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+    </div>
+
 </div>
-      
-    

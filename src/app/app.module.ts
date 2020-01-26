@@ -12,10 +12,16 @@ import './polyfills';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatNativeDateModule} from '@angular/material/core';
 import {DemoMaterialModule} from './watchers/material-module';
+import { WinnerComponent } from './winner/winner.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { ColorPipePipe } from './color-pipe.pipe';
 @NgModule({
   declarations: [
     AppComponent,
-    WatchersComponent
+    WatchersComponent,
+    WinnerComponent,
+    NavbarComponent,
+    ColorPipePipe
   ],
   imports: [
     BrowserModule,

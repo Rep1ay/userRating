@@ -25,3 +25,51 @@ th.mat-header-cell {
   background: #d42ed6;
   color: white;
 }
+
+.example-h2 {
+  margin: 10px;
+}
+
+.example-section {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  height: 60px;
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.button_block{
+  display: flex;
+  justify-content: center;
+}
+
+.winners_block {
+  display: flex;
+  justify-content: center;
+  background: azure;
+  padding-bottom: 60px;
+}
+
+.winner_block{
+  display: flex;
+  justify-items: inherit;
+  flex-direction: column;
+  margin-top: 50px;
+}
+.winners_topic {
+  background: #ff4081;
+  color: #fff;
+  text-align: center;
+}
+
+.winner_parag{
+  width: 100%;
+  text-align: center;
+  margin: 0; 
+  color: rgb(250, 250, 250)
+}

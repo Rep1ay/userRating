@@ -7,7 +7,8 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class WatchersService {
-  private URL = "http://localhost:80/api/members";
+  private URL = "https://des-watchers.herokuapp.com/api/members";
+  // private URL = "http://localhost:3000/members"
 
   constructor(private http: HttpClient) { 
 
