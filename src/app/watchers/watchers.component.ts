@@ -62,7 +62,7 @@ export class WatchersComponent implements OnInit {
     this.clearMemberStyle();
     setTimeout(() => {
       const min = Math.ceil(0);
-      const max = Math.floor(+this.winnersCount);
+      const max = Math.floor(+this.winnersCount - 1);
       const result = Math.floor(Math.random() * (max - min + 1)) + min;
       this.winnersList[result].color = "#00BCD4";
       this.winnersList[result].nameFontSize = "70px";
