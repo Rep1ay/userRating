@@ -69,11 +69,17 @@ export class WatchersComponent implements OnInit {
     setTimeout(() => {
       // const valueFrom = localStorage.winnersRangeFrom ? localStorage.winnersRangeFrom : 0;
       // const valueTo = localStorage.winnersRangeTo ? localStorage.winnersRangeTo : +this.winnersCount - 1;
-      const min = Math.ceil(+this.valueFrom - 1);
-      const max = Math.floor(+this.valueTo - 1);
+      const min = Math.ceil(0);
+      const max = Math.floor(this.winnersList.length - 1);
       const result = Math.floor(Math.random() * (max - min + 1)) + min;
-      this.winnersList[result].color = "#00BCD4";
-      this.winnersList[result].nameFontSize = "70px";
+      if (this.winnersList[result]) {
+        this.winnersList[result].color = "#00BCD4";
+        this.winnersList[result].nameFontSize = "70px";
+      } else {
+        this.winnersList[Math.floor(Math.random() * (max - min + 1)) + min].color = "#00BCD4";
+        this.winnersList[Math.floor(Math.random() * (max - min + 1)) + min].nameFontSize = "70px";
+      }
+
       document.querySelectorAll(".winner_item").forEach(elem => {
         elem.classList.remove("winner_item")
       })

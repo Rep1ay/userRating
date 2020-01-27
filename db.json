@@ -98,6 +98,24 @@
       "__v": 0,
       "totalTime": 1,
       "userName": "Одинадцатый"
+    },
+    {
+      "_id": {
+        "$oid": "5dd4fd6b67a3a49a4ab7089a"
+      },
+      "userId": "236798",
+      "__v": 0,
+      "totalTime": 0,
+      "userName": "Двенадцатый"
+    },
+    {
+      "_id": {
+        "$oid": "5dd4fd6b67a3a49a4ab7089a"
+      },
+      "userId": "236798",
+      "__v": 0,
+      "totalTime": -1,
+      "userName": "Тринадцатый"
     }
   ]
 }
