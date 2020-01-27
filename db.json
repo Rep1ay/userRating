@@ -6,8 +6,8 @@
       },
       "userId": "86271",
       "__v": 0,
-      "totalTime": 2732,
-      "userName": "DeSeRtod"
+      "totalTime": 11,
+      "userName": " Первый"
     },
     {
       "_id": {
@@ -15,8 +15,8 @@
       },
       "userId": "230202",
       "__v": 0,
-      "totalTime": 2907,
-      "userName": "Rep1ay"
+      "totalTime": 10,
+      "userName": "Второй"
     },
     {
       "_id": {
@@ -24,8 +24,53 @@
       },
       "userId": "236798",
       "__v": 0,
-      "totalTime": 2648,
-      "userName": "Shagrom"
+      "totalTime": 9,
+      "userName": "Третий"
+    },
+    {
+      "_id": {
+        "$oid": "5dd4fd6b67a3a49a4ab7089a"
+      },
+      "userId": "236798",
+      "__v": 0,
+      "totalTime": 8,
+      "userName": "Четвёртый"
+    },
+    {
+      "_id": {
+        "$oid": "5dd4fd6b67a3a49a4ab7089a"
+      },
+      "userId": "236798",
+      "__v": 0,
+      "totalTime": 7,
+      "userName": "Пятый"
+    },
+    {
+      "_id": {
+        "$oid": "5dd4fd6b67a3a49a4ab7089a"
+      },
+      "userId": "236798",
+      "__v": 0,
+      "totalTime": 6,
+      "userName": "ШЕстой"
+    },
+    {
+      "_id": {
+        "$oid": "5dd4fd6b67a3a49a4ab7089a"
+      },
+      "userId": "236798",
+      "__v": 0,
+      "totalTime": 5,
+      "userName": "Седьмой"
+    },
+    {
+      "_id": {
+        "$oid": "5dd4fd6b67a3a49a4ab7089a"
+      },
+      "userId": "236798",
+      "__v": 0,
+      "totalTime": 4,
+      "userName": "Востмой"
     },
     {
       "_id": {
@@ -34,7 +79,7 @@
       "userId": "236798",
       "__v": 0,
       "totalTime": 3,
-      "userName": "Shagrom"
+      "userName": "Девятый"
     },
     {
       "_id": {
@@ -43,7 +88,7 @@
       "userId": "236798",
       "__v": 0,
       "totalTime": 2,
-      "userName": "Shagrom"
+      "userName": "Десятый"
     },
     {
       "_id": {
@@ -52,52 +97,7 @@
       "userId": "236798",
       "__v": 0,
       "totalTime": 1,
-      "userName": "Shagrom"
-    },
-    {
-      "_id": {
-        "$oid": "5dd4fd6b67a3a49a4ab7089a"
-      },
-      "userId": "236798",
-      "__v": 0,
-      "totalTime": 1,
-      "userName": "Shagrom"
-    },
-    {
-      "_id": {
-        "$oid": "5dd4fd6b67a3a49a4ab7089a"
-      },
-      "userId": "236798",
-      "__v": 0,
-      "totalTime": 1,
-      "userName": "Shagrom"
-    },
-    {
-      "_id": {
-        "$oid": "5dd4fd6b67a3a49a4ab7089a"
-      },
-      "userId": "236798",
-      "__v": 0,
-      "totalTime": 1,
-      "userName": "Shagrom"
-    },
-    {
-      "_id": {
-        "$oid": "5dd4fd6b67a3a49a4ab7089a"
-      },
-      "userId": "236798",
-      "__v": 0,
-      "totalTime": 1,
-      "userName": "Shagrom"
-    },
-    {
-      "_id": {
-        "$oid": "5dd4fd6b67a3a49a4ab7089a"
-      },
-      "userId": "236798",
-      "__v": 0,
-      "totalTime": 1,
-      "userName": "Shagrom"
+      "userName": "Одинадцатый"
     }
   ]
 }

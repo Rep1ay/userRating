@@ -23,6 +23,9 @@ export class WatchersComponent implements OnInit {
   loaderColor = 'accent';
   mode = 'indeterminate';
   value = 50;
+  valueFrom;
+  valueTo;
+  membersTop;
   watchersList: Watcher[] = [];
   winnersList: Watcher[] = []
   color: ColorPipePipe
@@ -49,7 +52,10 @@ export class WatchersComponent implements OnInit {
         })
 
       })
-    this.winnersCount = localStorage.winnersCount ? localStorage.winnersCount : 10
+    // this.winnersCount = localStorage.winnersCount ? localStorage.winnersCount : 10;
+    this.valueFrom = localStorage.winnersRangeFrom ? localStorage.winnersRangeFrom : 1;
+    this.valueTo = localStorage.winnersRangeTo || localStorage.winnersCount ? localStorage.winnersRangeTo : 10;
+    this.membersTop = (+this.valueTo + 1) - +this.valueFrom;
   }
 
   ngOnInit() {
@@ -61,8 +67,10 @@ export class WatchersComponent implements OnInit {
     })
     this.clearMemberStyle();
     setTimeout(() => {
-      const min = Math.ceil(0);
-      const max = Math.floor(+this.winnersCount - 1);
+      // const valueFrom = localStorage.winnersRangeFrom ? localStorage.winnersRangeFrom : 0;
+      // const valueTo = localStorage.winnersRangeTo ? localStorage.winnersRangeTo : +this.winnersCount - 1;
+      const min = Math.ceil(+this.valueFrom - 1);
+      const max = Math.floor(+this.valueTo - 1);
       const result = Math.floor(Math.random() * (max - min + 1)) + min;
       this.winnersList[result].color = "#00BCD4";
       this.winnersList[result].nameFontSize = "70px";
@@ -73,7 +81,7 @@ export class WatchersComponent implements OnInit {
 
   }
 
-  clearMemberStyle(){
+  clearMemberStyle() {
     this.winnersList = this.winnersList.map((winner, index) => {
       winner.color = "#7B76F5"
       winner.nameFontSize = "20px"
@@ -87,7 +95,7 @@ export class WatchersComponent implements OnInit {
   };
 
   getTheWinners() {
-    this.winnersList = this.watchersList.slice(0, +this.winnersCount)
+    this.winnersList = this.watchersList.slice((+this.valueFrom - 1), +this.valueTo)
     this.winnersList = this.winnersList.map((winner, index) => {
       winner.color = this.changeColor(index + 1);
       winner.nameFontSize = this.changeNameFontSize(index + 1);
@@ -104,19 +112,18 @@ export class WatchersComponent implements OnInit {
       el.scrollIntoView();
     }, 100)
   }
-  
 
   changeColor(value) {
     let color;
     switch (value) {
       case 1:
-        color = "#00BCD4"
+        color = "#62C462"
         break;
       case 2:
         color = "#FF7E00"
         break;
       case 3:
-        color = "#62C462"
+        color = "#00BCD4"
         break;
       default:
         color = "#7B76F5"

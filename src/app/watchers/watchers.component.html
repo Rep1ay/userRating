@@ -11,11 +11,11 @@
         <button (click)="scroll()" color="accent" mat-raised-button style="   
                         height: 60px;
                         margin: 50px 0;
-                        font-size: 25px;">Определить Топ-{{winnersCount}} Зрителей</button>
+                        font-size: 25px;">Определить Топ-{{membersTop}} Зрителей</button>
     </div>
 
     <mat-card id="winners_block" class="winners_topic" *ngIf=showWinners>
-        <h1>Топ-{{winnersCount}} Зрителей</h1>
+        <h1>Топ-{{membersTop}} Зрителей</h1>
         <button (click)="getTheWinner()" mat-raised-button color="warn">
             Определить Победителя
         </button>

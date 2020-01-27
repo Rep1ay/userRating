@@ -1,1 +1,50 @@
-<p>winner works!</p>
+<div class="field_block">
+    <form class="top-form">
+        <mat-form-field appearance="fill" class="example-full-width">
+            <span matPrefix>Топ- &nbsp;</span>
+            <input matInput
+            min="0" max="100" type="number" placeholder="Value" 
+            [(ngModel)]="value" 
+            [ngModelOptions]="{standalone: true}">
+        </mat-form-field>
+    </form>
+    <div (click)="applyTop()" class="ripple mat-elevation-z4"
+        matRipple
+        [matRippleCentered]="centered"
+        [matRippleDisabled]="disabled"
+        [matRippleUnbounded]="unbounded"
+        [matRippleRadius]="radius"
+        [matRippleColor]="color">
+        Подтверди!
+    </div>
+</div>
+
+<div class="field_block">
+    <form class="range-top-form">
+        <mat-form-field appearance="fill" class="example-full-width">
+            <span matPrefix>Топ От- &nbsp;</span>
+            <input matInput
+            min="0" max="100" type="number" placeholder="Value" 
+            [(ngModel)]="valueFrom" 
+            [ngModelOptions]="{standalone: true}">
+        </mat-form-field>
+    </form>
+    <form class="range-top-form">
+        <mat-form-field appearance="fill" class="example-full-width">
+            <span matPrefix>Топ До- &nbsp;</span>
+            <input matInput
+            min="0" max="100" type="number" placeholder="Value" 
+            [(ngModel)]="valueTo"
+            [ngModelOptions]="{standalone: true}">
+        </mat-form-field>
+    </form>
+    <div (click)="applyRangeTop()" class="ripple mat-elevation-z4"
+        matRipple
+        [matRippleCentered]="centered"
+        [matRippleDisabled]="disabled"
+        [matRippleUnbounded]="unbounded"
+        [matRippleRadius]="radius"
+        [matRippleColor]="color">
+        Подтверди!
+    </div>
+</div>
