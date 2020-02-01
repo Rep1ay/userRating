@@ -71,13 +71,31 @@ export class WatchersComponent implements OnInit {
       // const valueTo = localStorage.winnersRangeTo ? localStorage.winnersRangeTo : +this.winnersCount - 1;
       const min = Math.ceil(0);
       const max = Math.floor(this.winnersList.length - 1);
-      const result = Math.floor(Math.random() * (max - min + 1)) + min;
+      let result = Math.floor(Math.random() * (max - min + 1)) + min;
       if (this.winnersList[result]) {
         this.winnersList[result].color = "#00BCD4";
         this.winnersList[result].nameFontSize = "70px";
       } else {
-        this.winnersList[Math.floor(Math.random() * (max - min + 1)) + min].color = "#00BCD4";
-        this.winnersList[Math.floor(Math.random() * (max - min + 1)) + min].nameFontSize = "70px";
+        result = Math.floor(Math.random() * (max - min + 1)) + min;
+        this.winnersList[result].color = "#00BCD4";
+        this.winnersList[result].nameFontSize = "70px";
+      }
+
+      for (let i = 1; i < 3; i++) {
+        const winnerByInd = localStorage.getItem(`winner${i}`);
+        const winnerByResult = this.winnersList[result].userName;
+        const topRangeFrom = localStorage.winnersRangeFrom;
+        const topRangeTo = localStorage.winnersRangeTo;
+
+        if (!winnerByInd) {
+          localStorage.setItem(`winner${i}`, winnerByResult);
+          return;
+        } else {
+          localStorage.setItem(`winner${i + 2}`, localStorage.getItem(`winner${i + 1}`))
+          localStorage.setItem(`winner${i + 1}`, winnerByInd)
+          localStorage.setItem(`winner${i}`,`Топ(${topRangeFrom}-${topRangeTo}) ${winnerByResult}`)
+          return;
+        }
       }
 
       document.querySelectorAll(".winner_item").forEach(elem => {

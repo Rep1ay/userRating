@@ -1,19 +1,19 @@
+<div class="topRange mat-elevation-z4" 
+    matRipple [matRippleCentered]="centered"
+    [matRippleDisabled]="disabled" [matRippleUnbounded]="unbounded" [matRippleRadius]="radius"
+    [matRippleColor]="color">
+        <h2>Диапазон Победителей</h2>
+</div>
 <div class="field_block">
     <form class="top-form">
         <mat-form-field appearance="fill" class="example-full-width">
             <span matPrefix>Топ- &nbsp;</span>
-            <input matInput
-            min="0" max="100" type="number" placeholder="Value" 
-            [(ngModel)]="value" 
-            [ngModelOptions]="{standalone: true}">
+            <input matInput min="0" max="100" type="number" placeholder="Value" [(ngModel)]="value"
+                [ngModelOptions]="{standalone: true}">
         </mat-form-field>
     </form>
-    <div (click)="applyTop()" class="ripple mat-elevation-z4"
-        matRipple
-        [matRippleCentered]="centered"
-        [matRippleDisabled]="disabled"
-        [matRippleUnbounded]="unbounded"
-        [matRippleRadius]="radius"
+    <div (click)="applyTop()" class="ripple mat-elevation-z4" matRipple [matRippleCentered]="centered"
+        [matRippleDisabled]="disabled" [matRippleUnbounded]="unbounded" [matRippleRadius]="radius"
         [matRippleColor]="color">
         Подтверди!
     </div>
@@ -23,28 +23,46 @@
     <form class="range-top-form">
         <mat-form-field appearance="fill" class="example-full-width">
             <span matPrefix>Топ От- &nbsp;</span>
-            <input matInput
-            min="0" max="100" type="number" placeholder="Value" 
-            [(ngModel)]="valueFrom" 
-            [ngModelOptions]="{standalone: true}">
+            <input matInput min="0" max="100" type="number" placeholder="Value" [(ngModel)]="valueFrom"
+                [ngModelOptions]="{standalone: true}">
         </mat-form-field>
     </form>
     <form class="range-top-form">
         <mat-form-field appearance="fill" class="example-full-width">
             <span matPrefix>Топ До- &nbsp;</span>
-            <input matInput
-            min="0" max="100" type="number" placeholder="Value" 
-            [(ngModel)]="valueTo"
-            [ngModelOptions]="{standalone: true}">
+            <input matInput min="0" max="100" type="number" placeholder="Value" [(ngModel)]="valueTo"
+                [ngModelOptions]="{standalone: true}">
         </mat-form-field>
     </form>
-    <div (click)="applyRangeTop()" class="ripple mat-elevation-z4"
-        matRipple
-        [matRippleCentered]="centered"
-        [matRippleDisabled]="disabled"
-        [matRippleUnbounded]="unbounded"
-        [matRippleRadius]="radius"
+    <div (click)="applyRangeTop()" class="ripple mat-elevation-z4" matRipple [matRippleCentered]="centered"
+        [matRippleDisabled]="disabled" [matRippleUnbounded]="unbounded" [matRippleRadius]="radius"
         [matRippleColor]="color">
         Подтверди!
     </div>
 </div>
+
+<div class="topRange mat-elevation-z4" 
+    matRipple [matRippleCentered]="centered"
+    [matRippleDisabled]="disabled" [matRippleUnbounded]="unbounded" [matRippleRadius]="radius"
+    [matRippleColor]="color">
+        <h2>Статистика Победителей</h2>
+</div>
+
+<div *ngIf=showWinners class="winners_block">
+    <mat-chip-list class="mat-chip-list-stacked" aria-label="Color selection">
+        <div class="winner_block">
+            <!-- <mat-chip style="height: auto;" *ngFor="let winner of winnersList; index as ind"
+                [style.background-color]="winner.color">
+                <p class="winner_parag">Ты ещё не отпределил победителей</p>
+            </mat-chip> -->
+            <mat-chip style="height: auto;background-color: rgb(98, 196, 98)" 
+                *ngFor="let winner of winnersList; index as ind">
+                <button class="winner_btn" mat-fab color="accent">{{ind + 1}}</button>
+                <p class="winner_parag" style = "font-size:25px">{{winner.userName}}</p>
+            </mat-chip>
+        </div>
+    </mat-chip-list>
+</div>
+
+
+
