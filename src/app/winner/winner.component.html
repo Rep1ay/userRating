@@ -48,14 +48,14 @@
         <h2>Статистика Победителей</h2>
 </div>
 
-<div *ngIf=showWinners class="winners_block">
+<div class="winners_block" style="background-color: #fff;">
     <mat-chip-list class="mat-chip-list-stacked" aria-label="Color selection">
         <div class="winner_block">
-            <!-- <mat-chip style="height: auto;" *ngFor="let winner of winnersList; index as ind"
-                [style.background-color]="winner.color">
-                <p class="winner_parag">Ты ещё не отпределил победителей</p>
-            </mat-chip> -->
-            <mat-chip style="height: auto;background-color: rgb(98, 196, 98)" 
+            <mat-chip *ngIf="!showWinners; else elseBlock" style="height: auto;"
+            style="height: auto;background-color: rgb(98, 196, 98)" >
+                <p style = "font-size:25px" class="winner_parag">Здесь будет обновляться список трёх последних победителей</p>
+            </mat-chip>
+            <mat-chip  #elseBlock style="height: auto;background-color: rgb(98, 196, 98)" 
                 *ngFor="let winner of winnersList; index as ind">
                 <button class="winner_btn" mat-fab color="accent">{{ind + 1}}</button>
                 <p class="winner_parag" style = "font-size:25px">{{winner.userName}}</p>

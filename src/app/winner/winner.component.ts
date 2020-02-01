@@ -7,12 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WinnerComponent implements OnInit {
   value;
+  elseBlock;
   valueFrom;
   valueTo;
   centered = true;
   disabled = false;
   unbounded = false;
-  showWinners;
+  showWinners = false;
   winnersList = [];
   lastWinnersCount = 3;
   radius: number;
@@ -24,15 +25,13 @@ export class WinnerComponent implements OnInit {
   }
 
   ngOnInit() {
-    for (let i = 1; i < this.lastWinnersCount+1; i++) {
-      // if(!this.winnersList){
-        this.winnersList.push({ userName: localStorage.getItem(`winner${i}`)})
-        this.showWinners = true;
-      // }else if (this.winnersList[i]) {
-      //   this.winnersList[i].userName = localStorage.getItem(`winner${i}`)
-      // }else{
-      //   return;
-      // }
+    if (localStorage.getItem(`winner1`)) {
+      this.showWinners = true;
+      for (let i = 1; i < this.lastWinnersCount + 1; i++) {
+        if (localStorage.getItem(`winner${i}`) && localStorage.getItem(`winner${i}`) !== "null") {
+          this.winnersList.push({ userName: localStorage.getItem(`winner${i}`) })
+        }
+      }
     }
   }
 

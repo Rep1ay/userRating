@@ -84,16 +84,14 @@ export class WatchersComponent implements OnInit {
       for (let i = 1; i < 3; i++) {
         const winnerByInd = localStorage.getItem(`winner${i}`);
         const winnerByResult = this.winnersList[result].userName;
-        const topRangeFrom = localStorage.winnersRangeFrom;
-        const topRangeTo = localStorage.winnersRangeTo;
 
         if (!winnerByInd) {
-          localStorage.setItem(`winner${i}`, winnerByResult);
+          localStorage.setItem(`winner${i}`, `Топ(${this.valueFrom}-${this.valueTo}) ${winnerByResult}`);
           return;
         } else {
           localStorage.setItem(`winner${i + 2}`, localStorage.getItem(`winner${i + 1}`))
-          localStorage.setItem(`winner${i + 1}`, winnerByInd)
-          localStorage.setItem(`winner${i}`,`Топ(${topRangeFrom}-${topRangeTo}) ${winnerByResult}`)
+          localStorage.setItem(`winner${i + 1}`, winnerByInd || '' )
+          localStorage.setItem(`winner${i}`,`Топ(${this.valueFrom}-${this.valueTo}) ${winnerByResult}`)
           return;
         }
       }
